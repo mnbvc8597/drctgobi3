@@ -305,7 +305,7 @@
         // --- Configuration ---
         // IMPORTANT: Replace this with the URL of your deployed backend server.
         // If running locally, keep it as http://localhost:5000
-        const BACKEND_API_URL = 'mongodb://atlas-sql-686badf89a861d713f8ef6da-psqomr.a.query.mongodb.net/drct?ssl=true&authSource=admin index.html';
+        const BACKEND_API_URL = mongodb+srv://<username>:<password>@cluster-name.mongodb.net/<database-name>?retryWrites=true&w=majority';
 
         // --- Get Elements ---
         const loginButton = document.getElementById('loginButton');
