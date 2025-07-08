@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHANDAPANI RURAL CHARITABLE TRUST</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Darker text color */
+        }
+        .section-padding {
+            padding: 4rem 1.5rem; /* Consistent padding for sections */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 4rem;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Admin mode styles */
+        .editable-content:focus {
+            outline: 2px solid #3b82f6; /* Blue ring on focus */
+            outline-offset: 2px;
+            background-color: #e0f2fe; /* Light blue background when editable */
+        }
+        .admin-controls {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.5rem;
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-blue-800 text-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-4 px-6">
+            <h1 class="text-3xl font-bold mb-4 md:mb-0">DHANDAPANI RURAL CHARITABLE TRUST</h1>
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6 text-lg">
+                    <li><a href="#home" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">About Us</a></li>
+                    <li><a href="#schemes" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Schemes</a></li>
+                    <li><a href="#faculty" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Faculty</a></li>
+                    <li><a href="#success-story" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Success Story</a></li>
+                    <li><a href="#announcements" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Announcements</a></li>
+                    <li><a href="#gallery" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Gallery</a></li>
+                    <li><a href="#registration" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Registration</a></li>
+                    <li><a href="#contact" class="hover:text-blue-200 transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact Us</a></li>
+                    <li><button id="loginButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Offset for fixed header -->
+    <div class="pt-24 md:pt-28"></div>
+
+    <!-- Home Section -->
+    <section id="home" class="section-padding bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-center">
+        <div class="container">
+            <h2 class="text-5xl font-extrabold mb-6 leading-tight editable-content" data-section="home" data-field="title">Loading...</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 editable-content" data-section="home" data-field="description">Loading...</p>
+            <a href="#about" class="inline-block bg-white text-blue-800 hover:bg-blue-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="about" data-field="heading">Loading...</h2>
+            <div class="prose lg:prose-xl mx-auto text-gray-700 leading-relaxed editable-content" data-section="about" data-field="content">
+                <p>Loading About Us content...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schemes Section -->
+    <section id="schemes" class="section-padding bg-gray-100">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="schemes" data-field="heading">Our Schemes</h2>
+            <div id="schemes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Schemes will be loaded here by JavaScript -->
+                <p class="text-center col-span-full text-gray-600">Loading schemes...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="faculty" data-field="heading">Our Esteemed Faculty</h2>
+            <div id="faculty-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Faculty will be loaded here by JavaScript -->
+                <p class="text-center col-span-full text-gray-600">Loading faculty...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Story Section -->
+    <section id="success-story" class="section-padding bg-gray-100">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="success-story" data-field="heading">Success Stories</h2>
+            <div id="success-story-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Success stories will be loaded here by JavaScript -->
+                <p class="text-center col-span-full text-gray-600">Loading success stories...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section id="announcements" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="announcements" data-field="heading">Latest Announcements</h2>
+            <div id="announcements-container" class="space-y-6">
+                <!-- Announcements will be loaded here by JavaScript -->
+                <p class="text-center text-gray-600">Loading announcements...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-gray-100">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="gallery" data-field="heading">Our Gallery</h2>
+            <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Gallery items will be loaded here by JavaScript -->
+                <p class="text-center col-span-full text-gray-600">Loading gallery...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section-padding bg-white">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="registration" data-field="heading">Registration</h2>
+            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-xl shadow-md">
+                <p class="text-gray-700 mb-6 text-lg text-center editable-content" data-section="registration" data-field="intro">Interested in our programs or want to volunteer? Please fill out the form below or contact us directly.</p>
+                <form id="registrationForm" action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Full Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+91 98765 43210">
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-gray-700 text-sm font-bold mb-2">Area of Interest:</label>
+                        <select id="interest" name="interest" class="shadow border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select an Option</option>
+                            <option value="skill-training">Skill Training Program</option>
+                            <option value="volunteer">Volunteer Opportunity</option>
+                            <option value="donation">Donation/Support</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                        <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us more about your interest or query..."></textarea>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section-padding bg-gray-100">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center mb-10 text-blue-700 editable-content" data-section="contact" data-field="heading">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600 editable-content" data-section="contact-info" data-field="infoTitle">Get in Touch</h3>
+                    <p class="text-gray-700 mb-4 editable-content" data-section="contact-info" data-field="infoIntro">We'd love to hear from you! Reach out to us for any inquiries, partnerships, or support.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Address:</strong> <span class="editable-content" data-section="contact-info" data-field="address">Loading...</span></li>
+                        <li><strong>Phone:</strong> <span class="editable-content" data-section="contact-info" data-field="phone">Loading...</span></li>
+                        <li><strong>Email:</strong> <a id="contact-email-link" href="#" class="text-blue-500 hover:underline editable-content" data-section="contact-info" data-field="email">Loading...</a></li>
+                        <li><strong>Working Hours:</strong> <span class="editable-content" data-section="contact-info" data-field="hours">Loading...</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600 editable-content" data-section="contact-form" data-field="title">Send Us a Message</h3>
+                    <form id="contactForm" action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label for="contact-name" class="sr-only">Name</label>
+                            <input type="text" id="contact-name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="contact-email" class="sr-only">Email</label>
+                            <input type="email" id="contact-email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Email" required>
+                        </div>
+                        <div>
+                            <label for="contact-message" class="sr-only">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-800 text-white py-8 px-6 text-center">
+        <div class="container mx-auto">
+            <p class="mb-4">&copy; 2025 DHANDAPANI RURAL CHARITABLE TRUST. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-blue-200 transition duration-300 ease-in-out">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-200 transition duration-300 ease-in-out">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalButton">&times;</span>
+            <h2 class="text-3xl font-bold text-center mb-6 text-blue-700">Admin Login</h2>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+                    <input type="text" id="username" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="admin" required>
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                    <input type="password" id="password" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="password" required>
+                </div>
+                <p id="loginMessage" class="text-red-500 text-center text-sm hidden">Invalid username or password.</p>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Controls (visible after login) -->
+    <div id="adminControls" class="admin-controls hidden">
+        <button id="toggleEditMode" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Toggle Edit Mode</button>
+        <button id="saveChangesButton" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hidden">Save Changes</button>
+        <button id="logoutButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">Logout</button>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        // IMPORTANT: Replace this with the URL of your deployed backend server.
+        // If running locally, keep it as http://localhost:5000
+        const BACKEND_API_URL = 'mongodb://atlas-sql-686badf89a861d713f8ef6da-psqomr.a.query.mongodb.net/drct?ssl=true&authSource=admin index.html';
+
+        // --- Get Elements ---
+        const loginButton = document.getElementById('loginButton');
+        const loginModal = document.getElementById('loginModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginMessage = document.getElementById('loginMessage');
+        const adminControls = document.getElementById('adminControls');
+        const toggleEditModeButton = document.getElementById('toggleEditMode');
+        const saveChangesButton = document.getElementById('saveChangesButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        // Content containers
+        const schemesContainer = document.getElementById('schemes-container');
+        const facultyContainer = document.getElementById('faculty-container');
+        const successStoryContainer = document.getElementById('success-story-container');
+        const announcementsContainer = document.getElementById('announcements-container');
+        const galleryContainer = document.getElementById('gallery-container');
+        const contactEmailLink = document.getElementById('contact-email-link');
+
+        let isAdminLoggedIn = false;
+        let isEditMode = false;
+
+        // --- Utility Functions ---
+
+        // Function to toggle content editable state
+        function toggleContentEditable(enable) {
+            const editableElements = document.querySelectorAll('.editable-content');
+            editableElements.forEach(element => {
+                element.contentEditable = enable;
+                if (enable) {
+                    element.classList.add('border', 'border-blue-500', 'rounded-md', 'p-1');
+                } else {
+                    element.classList.remove('border', 'border-blue-500', 'rounded-md', 'p-1');
+                }
+            });
+        }
+
+        // Function to fetch data from backend API
+        async function fetchData(endpoint) {
+            try {
+                const response = await fetch(`${BACKEND_API_URL}/${endpoint}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Error fetching ${endpoint}:`, error);
+                return []; // Return empty array on error
+            }
+        }
+
+        // Function to update data on backend API
+        async function updateData(endpoint, method, data) {
+            try {
+                const response = await fetch(`${BACKEND_API_URL}/${endpoint}`, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Authorization': `Bearer ${yourAuthToken}` // Add this for real authentication
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Error updating ${endpoint}:`, error);
+                alert(`Failed to save changes for ${endpoint}. Check console for details.`);
+                return null;
+            }
+        }
+
+        // --- Render Functions ---
+
+        // Render general content (Home, About Us, Contact Info)
+        async function renderGeneralContent() {
+            const sectionsToFetch = ['home', 'about', 'contact'];
+            for (const sectionName of sectionsToFetch) {
+                const contentData = await fetchData(`content/${sectionName}`);
+                if (contentData) {
+                    if (sectionName === 'home') {
+                        document.querySelector('[data-section="home"][data-field="title"]').textContent = contentData.title || 'Empowering Rural Communities Through Education';
+                        document.querySelector('[data-section="home"][data-field="description"]').textContent = contentData.description || 'DHANDAPANI RURAL CHARITABLE TRUST: Nurturing Talent, Building Futures.';
+                    } else if (sectionName === 'about') {
+                        document.querySelector('[data-section="about"][data-field="heading"]').textContent = contentData.heading || 'About Us';
+                        document.querySelector('[data-section="about"][data-field="content"]').innerHTML = contentData.content || '<p>Loading About Us content...</p>';
+                    } else if (sectionName === 'contact') {
+                        document.querySelector('[data-section="contact"][data-field="heading"]').textContent = contentData.heading || 'Contact Us';
+                        document.querySelector('[data-section="contact-info"][data-field="infoTitle"]').textContent = contentData.infoTitle || 'Get in Touch';
+                        document.querySelector('[data-section="contact-info"][data-field="infoIntro"]').textContent = contentData.infoIntro || 'We\'d love to hear from you! Reach out to us for any inquiries, partnerships, or support.';
+                        document.querySelector('[data-section="contact-info"][data-field="address"]').textContent = contentData.address || '[Your Institution Address Here], Palayapariyurkarai, Tamil Nadu, India';
+                        document.querySelector('[data-section="contact-info"][data-field="phone"]').textContent = contentData.phone || '+91 [Your Phone Number]';
+                        document.querySelector('[data-section="contact-info"][data-field="email"]').textContent = contentData.email || 'info@drctrust.org';
+                        contactEmailLink.href = `mailto:${contentData.email || 'info@drctrust.org'}`;
+                        document.querySelector('[data-section="contact-info"][data-field="hours"]').textContent = contentData.hours || 'Monday - Friday, 9:00 AM - 5:00 PM';
+                        document.querySelector('[data-section="contact-form"][data-field="title"]').textContent = contentData.formTitle || 'Send Us a Message';
+                    }
+                }
+            }
+        }
+
+        // Render Schemes
+        async function renderSchemes() {
+            const schemes = await fetchData('schemes');
+            schemesContainer.innerHTML = ''; // Clear loading message
+            if (schemes.length === 0) {
+                schemesContainer.innerHTML = '<p class="text-center col-span-full text-gray-600">No schemes available yet.</p>';
+            } else {
+                schemes.forEach(scheme => {
+                    const schemeCard = `
+                        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1" data-id="${scheme._id}" data-section-type="scheme">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600 editable-content" data-field="title">${scheme.title}</h3>
+                            <p class="text-gray-600 editable-content" data-field="description">${scheme.description}</p>
+                            <a href="#" class="text-blue-500 hover:underline mt-4 inline-block">Learn More</a>
+                        </div>
+                    `;
+                    schemesContainer.insertAdjacentHTML('beforeend', schemeCard);
+                });
+            }
+        }
+
+        // Render Faculty
+        async function renderFaculty() {
+            const faculty = await fetchData('faculty');
+            facultyContainer.innerHTML = ''; // Clear loading message
+            if (faculty.length === 0) {
+                facultyContainer.innerHTML = '<p class="text-center col-span-full text-gray-600">No faculty members listed yet.</p>';
+            } else {
+                faculty.forEach(member => {
+                    const facultyCard = `
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1" data-id="${member._id}" data-section-type="faculty">
+                            <img src="${member.imageUrl || 'https://placehold.co/150x150/e0e0e0/555555?text=Faculty'}" alt="${member.name}" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200">
+                            <h3 class="text-2xl font-semibold text-blue-600 editable-content" data-field="name">${member.name}</h3>
+                            <p class="text-gray-700 editable-content" data-field="role">${member.role}</p>
+                            <p class="text-gray-500 text-sm mt-2 editable-content" data-field="specialization">${member.specialization}</p>
+                        </div>
+                    `;
+                    facultyContainer.insertAdjacentHTML('beforeend', facultyCard);
+                });
+            }
+        }
+
+        // Render Success Stories
+        async function renderSuccessStories() {
+            const stories = await fetchData('success-stories');
+            successStoryContainer.innerHTML = ''; // Clear loading message
+            if (stories.length === 0) {
+                successStoryContainer.innerHTML = '<p class="text-center col-span-full text-gray-600">No success stories available yet.</p>';
+            } else {
+                stories.forEach(story => {
+                    const storyCard = `
+                        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out" data-id="${story._id}" data-section-type="success-story">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600 editable-content" data-field="title">${story.title}</h3>
+                            <p class="text-gray-700 mb-4 editable-content" data-field="description">${story.description}</p>
+                            <p class="text-gray-500 text-sm editable-content" data-field="quote">${story.quote}</p>
+                        </div>
+                    `;
+                    successStoryContainer.insertAdjacentHTML('beforeend', storyCard);
+                });
+            }
+        }
+
+        // Render Announcements
+        async function renderAnnouncements() {
+            const announcements = await fetchData('announcements');
+            announcementsContainer.innerHTML = ''; // Clear loading message
+            if (announcements.length === 0) {
+                announcementsContainer.innerHTML = '<p class="text-center text-gray-600">No announcements posted yet.</p>';
+            } else {
+                announcements.forEach(announcement => {
+                    const announcementCard = `
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out" data-id="${announcement._id}" data-section-type="announcement">
+                            <h3 class="text-2xl font-semibold mb-2 text-blue-600 editable-content" data-field="title">${announcement.title}</h3>
+                            <p class="text-gray-700 mb-2 editable-content" data-field="description">${announcement.description}</p>
+                            <p class="text-gray-500 text-sm editable-content" data-field="date">Date: ${announcement.date}</p>
+                        </div>
+                    `;
+                    announcementsContainer.insertAdjacentHTML('beforeend', announcementCard);
+                });
+            }
+        }
+
+        // Render Gallery
+        async function renderGallery() {
+            const galleryItems = await fetchData('gallery');
+            galleryContainer.innerHTML = ''; // Clear loading message
+            if (galleryItems.length === 0) {
+                galleryContainer.innerHTML = '<p class="text-center col-span-full text-gray-600">No gallery items available yet.</p>';
+            } else {
+                galleryItems.forEach(item => {
+                    const galleryCard = `
+                        <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out" data-id="${item._id}" data-section-type="gallery">
+                            <img src="${item.imageUrl || 'https://placehold.co/600x400/a0c4ff/ffffff?text=Image'}" alt="${item.caption}" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300 ease-in-out">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                                <p class="text-white text-lg font-semibold editable-content" data-field="caption">${item.caption}</p>
+                            </div>
+                        </div>
+                    `;
+                    galleryContainer.insertAdjacentHTML('beforeend', galleryCard);
+                });
+            }
+        }
+
+        // --- Event Listeners and Logic ---
+
+        // Show login modal
+        loginButton.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+            loginMessage.classList.add('hidden'); // Hide any previous messages
+            usernameInput.value = ''; // Clear fields
+            passwordInput.value = '';
+        });
+
+        // Close login modal
+        closeModalButton.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        // Close modal if clicking outside
+        window.addEventListener('click', (event) => {
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // Handle login form submission (simulated)
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Simple hardcoded credentials for demonstration
+            if (username === 'admin' && password === 'password') {
+                isAdminLoggedIn = true;
+                loginModal.style.display = 'none';
+                loginButton.classList.add('hidden'); // Hide login button
+                adminControls.classList.remove('hidden'); // Show admin controls
+                loginMessage.classList.add('hidden');
+                console.log("Admin logged in successfully (simulated).");
+            } else {
+                loginMessage.classList.remove('hidden');
+            }
+        });
+
+        // Toggle Edit Mode
+        toggleEditModeButton.addEventListener('click', () => {
+            isEditMode = !isEditMode;
+            toggleContentEditable(isEditMode);
+            if (isEditMode) {
+                saveChangesButton.classList.remove('hidden');
+                toggleEditModeButton.textContent = 'Exit Edit Mode';
+                console.log("Edit mode enabled. You can now click and type to edit content.");
+            } else {
+                saveChangesButton.classList.add('hidden');
+                toggleEditModeButton.textContent = 'Toggle Edit Mode';
+                console.log("Edit mode disabled.");
+            }
+        });
+
+        // Save Changes to Backend
+        saveChangesButton.addEventListener('click', async () => {
+            console.log("Attempting to save changes to backend...");
+            const editableElements = document.querySelectorAll('.editable-content');
+            const updates = {};
+
+            editableElements.forEach(element => {
+                const section = element.dataset.section;
+                const field = element.dataset.field;
+                const id = element.closest('[data-id]') ? element.closest('[data-id]').dataset.id : null;
+                const sectionType = element.closest('[data-section-type]') ? element.closest('[data-section-type]').dataset.sectionType : null;
+
+                if (!updates[sectionType || section]) {
+                    updates[sectionType || section] = {};
+                }
+
+                if (id) {
+                    if (!updates[sectionType || section][id]) {
+                        updates[sectionType || section][id] = {};
+                    }
+                    updates[sectionType || section][id][field] = element.innerHTML; // Use innerHTML for rich text
+                } else {
+                    updates[section][field] = element.innerHTML; // Use innerHTML for rich text
+                }
+            });
+
+            // Process updates for general content (home, about, contact)
+            for (const section of ['home', 'about', 'contact']) {
+                if (updates[section]) {
+                    await updateData(`content/${section}`, 'PUT', updates[section]);
+                }
+            }
+
+            // Process updates for dynamic collections (schemes, faculty, etc.)
+            const dynamicCollections = ['scheme', 'faculty', 'success-story', 'announcement', 'gallery'];
+            for (const collectionType of dynamicCollections) {
+                if (updates[collectionType]) {
+                    for (const id in updates[collectionType]) {
+                        await updateData(`${collectionType}s/${id}`, 'PUT', updates[collectionType][id]);
+                    }
+                }
+            }
+            alert("Changes sent to backend! Refresh the page to see changes if your backend is configured for persistence.");
+            console.log("Changes sent to backend:", updates);
+            // Re-fetch and re-render all content to show saved changes
+            await loadAllContent();
+        });
+
+
+        // Logout
+        logoutButton.addEventListener('click', () => {
+            isAdminLoggedIn = false;
+            isEditMode = false;
+            toggleContentEditable(false); // Disable editing
+            adminControls.classList.add('hidden'); // Hide admin controls
+            loginButton.classList.remove('hidden'); // Show login button
+            saveChangesButton.classList.add('hidden');
+            toggleEditModeButton.textContent = 'Toggle Edit Mode';
+            console.log("Admin logged out.");
+        });
+
+        // --- Initial Load ---
+        async function loadAllContent() {
+            await renderGeneralContent();
+            await renderSchemes();
+            await renderFaculty();
+            await renderSuccessStories();
+            await renderAnnouncements();
+            await renderGallery();
+            // After loading, if admin is logged in and edit mode was active, re-enable it
+            if (isAdminLoggedIn && isEditMode) {
+                toggleContentEditable(true);
+            }
+        }
+
+        // Load content when the page loads
+        document.addEventListener('DOMContentLoaded', loadAllContent);
+    </script>
+
+</body>
+</html>
